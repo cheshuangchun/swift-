@@ -15,8 +15,91 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        stringSize()
         // Override point for customization after application launch.
+        window = UIWindow(frame:UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+       test()
+        
+        testSql()
+        
+//        let vc = CSMineViewController()
+//        let nav = UINavigationController(rootViewController:vc)
+//        vc.title = "登录"
+//        window?.rootViewController = nav
+        
+//        let advc = CSADViewController()
+//        window?.rootViewController = advc
+        let tabbarvc = CSMainTabViewController()
+        window?.rootViewController = tabbarvc
+        
         return true
+    }
+    
+    
+    func test()
+    {
+        var tttt :Array<Any>?
+        tttt = nil
+        if tttt != nil && (tttt?.count)! > 0
+        {
+            print("哈哈哈")
+        }else
+        {
+            print("嘿嘿嘿")
+        }
+        
+        
+        let result1: Double? = 100.0
+        print(result1!)
+        
+        let result3: Double! = 200.0
+        print(result3)
+        
+        var str :String?
+        
+        let hashValue = str?.hashValue
+        print("hehe\(hashValue)")
+        
+        var tArray :Array<Any>?
+        
+         if   let cocount = tArray?.count
+         {
+            print(cocount )
+         }
+         else
+         {
+            print("bababa")
+         }
+        
+        
+        
+    }
+    
+    func testSql()
+    {
+//        let sqliteContext = SQLiteManager()
+//        //插入数据
+//        sqliteContext.insertData(_name: "车大人", _email: "88888@126.com")
+//        sqliteContext.insertData(_name: "田大人", _email: "66666@126.com")
+//        sqliteContext.insertData(_name: "张大人", _email: "111111@126.com")
+//        //读取数据
+//        let arr = sqliteContext.readDataByName(nameT: "车大人")
+//        print(arr)
+    }
+    
+    
+    func stringSize()
+    {
+        let string:String = "反倒龙罚单龙口反倒龙分开冬季法兰东垃圾反倒龙发开动卡里分但凯撒九分裤;ldsjafkd;sa发淡扫啦反倒龙卡了负担赛a;fDSA"
+        let font = UIFont.systemFont(ofSize: 12)
+        let attributes = [NSFontAttributeName:font]
+        let option = NSStringDrawingOptions.usesLineFragmentOrigin
+        
+        
+        let rect : CGRect = string.boundingRect(with: CGSize(width:320.0, height:999.9), options: option, attributes: attributes, context: nil)
+        print(rect.size.width)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
